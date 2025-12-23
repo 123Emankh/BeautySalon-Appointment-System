@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنتجات - Emalen Salon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cairo:wght@300;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Cairo',sans-serif;background:#fdf8f5;color:#444;min-height:100vh}
+        .sidebar{width:260px;height:100vh;background:linear-gradient(180deg,#d4a86a 0%,#c89b56 100%);position:fixed;top:0;right:0;padding:30px 20px;box-shadow:-10px 0 30px rgba(0,0,0,0.15);z-index:1000}
+        .logo-admin{text-align:center;margin-bottom:40px;color:#4b2c4f;font-family:'Playfair Display',serif;font-size:28px;font-weight:800}
+        .logo-admin span{color:#fff;font-style:italic}
+        .logo-admin::after{content:'';display:block;width:80px;height:3px;background:#4b2c4f;margin:12px auto;border-radius:3px}
+        .sidebar a{display:flex;align-items:center;padding:14px 20px;color:#4b2c4f;text-decoration:none;margin:8px 0;border-radius:12px;transition:all .3s;font-weight:600}
+        .sidebar a i{margin-left:12px}
+        .sidebar a:hover,.sidebar a.active{background:#4b2c4f;color:#d4a86a;transform:translateX(-8px);box-shadow:0 5px 15px rgba(75,44,79,0.4)}
+        .topbar{height:70px;background:white;margin-right:260px;padding:0 30px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 20px rgba(0,0,0,0.08);position:fixed;top:0;left:0;right:260px;z-index:999}
+        .content{margin-right:260px;margin-top:90px;padding:40px}
+        .page-title{font-size:2.5rem;color:#6d3a75;margin-bottom:10px}
+        .page-desc{color:#888;margin-bottom:30px}
+
+        /* زر إضافة منتج */
+        .add-btn{background:#6d3a75;color:white;padding:12px 30px;border:none;border-radius:50px;font-size:1.1rem;cursor:pointer;box-shadow:0 5px 15px rgba(109,58,117,0.3);transition:.3s}
+        .add-btn:hover{background:#4b2c4f;transform:translateY(-3px)}
+
+        /* شبكة المنتجات */
+        .products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:25px;margin-top:30px}
+        .product-card{background:white;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:.4s}
+        .product-card:hover{transform:translateY(-15px);box-shadow:0 20px 40px rgba(212,168,106,0.2)}
+        .product-img{height:280px;background:#f0e6e0;background-size:cover;background-position:center}
+        .product-info{padding:20px;text-align:center}
+        .product-name{font-size:1.4rem;color:#6d3a75;margin:10px 0;font-weight:600}
+        .product-price{color:#d4a86a;font-size:1.5rem;font-weight:bold}
+        .product-actions{margin-top:15px;display:flex;gap:10px;justify-content:center}
+        .btn-edit{background:#d4a86a;color:white;padding:8px 16px;border:none;border-radius:50px;font-size:0.9rem;cursor:pointer}
+        .btn-delete{background:#e91e63;color:white;padding:8px 16px;border:none;border-radius:50px;font-size:0.9rem;cursor:pointer}
+    </style>
+</head>
+<body>
+
+
+
+
+<!-- الشريط الأيمن القديم بالضبط زي ما كان في admin.html -->
+<div class="sidebar">
+    <div class="logo-admin">Emalen <span>Salon</span></div>
+    <a href="admin.html"><i class="fas fa-home"></i> <span>الرئيسية</span></a>
+    <a href="products.html" class="active"><i class="fas fa-box"></i> <span>المنتجات</span></a>
+    <a href="#"><i class="fas fa-calendar-check"></i> <span>المواعيد</span></a>
+    <a href="#"><i class="fas fa-users"></i> <span>الزبائن</span></a>
+    <a href="#"><i class="fas fa-cut"></i> <span>الخدمات</span></a>
+    <a href="#"><i class="fas fa-money-bill-wave"></i> <span>المدفوعات</span></a>
+    <a href="#"><i class="fas fa-chart-bar"></i> <span>التقارير</span></a>
+    <a href="#"><i class="fas fa-cog"></i> <span>الإعدادات</span></a>
+</div>
+
+<!-- الشريط العلوي -->
+<div class="topbar">
+    <div style="font-size:1.4rem;color:#6d3a75;font-weight:600">إدارة المنتجات</div>
+    <button class="add-btn"><i class="fas fa-plus"></i> إضافة منتج جديد</button>
+</div>
+
+<!-- المحتوى -->
+<div class="content">
+    <h1 class="page-title">منتجات الصالون</h1>
+
+    <div class="products-grid">
+        <!-- منتج 1 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1596462502278-ffb8f7a6e9be?w=600')"></div>
+            <div class="product-info">
+                <div class="product-name">زيت الأرجان المغربي</div>
+                <div class="product-price">280 ₪</div>
+                <div class="product-actions">
+                    <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                    <button class="btn-delete"><i class="fas fa-trash"></i> حذف</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 2 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1625772292135-2c6f85bef174?w=600')"></div>
+            <div class="product-info">
+                <div class="product-name">ماسك الكيراتين</div>
+                <div class="product-price">320 ₪</div>
+                <div class="product-actions">
+                    <button class="btn-edit">تعديل</button>
+                    <button class="btn-delete">حذف</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 3 -->
+        <div class="product-card">
+            <div class="product-img" style="background-image:url('https://images.unsplash.com/photo-1608248597785-5f6e4db6d2ed?w=600')"></div>
+            <div class="product-info">
+                <div class="product-name">شامبو خالي من السلفات</div>
+                <div class="product-price">190 ₪</div>
+                <div class="product-actions">
+                    <button class="btn-edit">تعديل</button>
+                    <button class="btn-delete">حذف</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
